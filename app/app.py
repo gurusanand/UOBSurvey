@@ -1,8 +1,8 @@
 """
 UOB Risk & Regulatory IT Survey Application - FIXED VERSION
 Complete application with proper question loading and display
-Author: Optimum AI Lab
-Version: 2.1 (Fixed)
+Author: Optimum AI Lab  
+Version: 2.2 (Fixed)
 """
 
 import streamlit as st
@@ -12,12 +12,18 @@ import time
 from datetime import datetime
 import os
 import sys
-from dotenv import load_dotenv
 import pandas as pd
-from dynamic_questions_enhanced import generate_tooltip
 
-# Load environment variables early so OPENAI_API_KEY is available for tooltips
-load_dotenv()
+# Load environment variables - handle gracefully if dotenv not available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # If dotenv is not installed, continue without it
+    # (useful for cloud deployments like Streamlit Cloud)
+    pass
+
+from dynamic_questions_enhanced import generate_tooltip
 
 # Configure Streamlit
 st.set_page_config(
