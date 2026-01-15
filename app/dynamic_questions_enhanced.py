@@ -9,7 +9,6 @@ import os
 import json
 import streamlit as st
 from typing import Dict, List, Tuple
-import httpx
 from openai import OpenAI
 
 # Load environment variables from .env file - handle gracefully if dotenv not available
@@ -47,8 +46,8 @@ class DynamicQuestionManagerEnhanced:
             return False
         
         try:
-            http_client = httpx.Client(timeout=60.0, trust_env=False)
-            self.client = OpenAI(api_key=self.api_key, http_client=http_client)
+            # Initialize OpenAI client with default HTTP client (requests-based)
+            self.client = OpenAI(api_key=self.api_key)
             return True
         except Exception as e:
             st.error(f"Error initializing OpenAI client: {str(e)}")
