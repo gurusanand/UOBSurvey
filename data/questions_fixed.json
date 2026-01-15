@@ -1,0 +1,128 @@
+[
+  {
+    "id": "AS_Q1",
+    "text": "What is the current end-to-end architecture with tech stack (sources -> ETL -> reporting)?",
+    "category": "Architecture & Scale",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "AS_Q2",
+    "text": "Where is the platform hosted (on-prem / cloud / hybrid)?",
+    "category": "Architecture & Scale",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "AS_Q3",
+    "text": "What is the approximate data volume processed (daily/monthly)?",
+    "category": "Architecture & Scale",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "AS_Q4",
+    "text": "Are data layers clearly defined (raw / curated / reporting), or mostly point-to-point ETL?",
+    "category": "Architecture & Scale",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "JO_Q1",
+    "text": "Is there a single orchestration tool giving visibility across the 3000 jobs?",
+    "category": "Job Orchestration & Operations",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "JO_Q2",
+    "text": "What are the top 3 causes of job failures (data quality, late files, infra, code)?",
+    "category": "Job Orchestration & Operations",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "JO_Q3",
+    "text": "How are failures detected and re-run today (manual vs automated)?",
+    "category": "Job Orchestration & Operations",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "JO_Q4",
+    "text": "Are there batch window or SLA issues for regulatory or finance reporting?",
+    "category": "Job Orchestration & Operations",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "JO_Q5",
+    "text": "Is the primary pain point today dev & maintenance effort, or ops & support effort (job monitoring, failures, reruns)?",
+    "category": "Job Orchestration & Operations",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "EDT_Q1",
+    "text": "What ETL technologies are used (vendor tools vs custom/in-house code)?",
+    "category": "ETL, Dev & Tooling",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "EDT_Q2",
+    "text": "What % of ETL is in-house developed, why?",
+    "category": "ETL, Dev & Tooling",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "EDT_Q3",
+    "text": "How are Bitbucket and Aldon used today, and where is the biggest friction?",
+    "category": "ETL, Dev & Tooling",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "DQGT_Q1",
+    "text": "How strong is data lineage and audit traceability (BCBS 239 readiness)?",
+    "category": "Data Quality, Governance & Testing",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "DQGT_Q2",
+    "text": "How is test data created, and what automation exists for regression testing?",
+    "category": "Data Quality, Governance & Testing",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "RD_Q1",
+    "text": "Approximately how many distinct reports are produced from these ~3000 jobs (regulatory, risk, finance)?",
+    "category": "Reporting & Direction",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "RD_Q2",
+    "text": "Are reports strictly batch, or is near-real-time / intraday required for any use cases?",
+    "category": "Reporting & Direction",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "RD_Q3",
+    "text": "What would define success (fewer jobs, fewer failures, faster change, better auditability)?",
+    "category": "Reporting & Direction",
+    "type": "text",
+    "required": true
+  },
+  {
+    "id": "RD_Q4",
+    "text": "Is the bank using any modern Lakehouse like Databricks or Snowflake?",
+    "category": "Reporting & Direction",
+    "type": "text",
+    "required": true
+  }
+]
