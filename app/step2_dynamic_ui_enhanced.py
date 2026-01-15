@@ -7,7 +7,16 @@ Version: 2.2 (Fixed)
 
 import streamlit as st
 import os
-from dotenv import load_dotenv
+
+# Load environment variables - handle gracefully if dotenv not available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # If dotenv is not installed, continue without it
+    # (useful for cloud deployments like Streamlit Cloud)
+    pass
+
 from dynamic_questions_enhanced import (
     DynamicQuestionManagerEnhanced,
     FIRST_QUESTION,
@@ -16,9 +25,6 @@ from dynamic_questions_enhanced import (
     generate_insights_summary,
     validate_answer
 )
-
-# Load environment variables
-load_dotenv()
 
 def check_api_key():
     """Check if OpenAI API key is available"""

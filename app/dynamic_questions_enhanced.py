@@ -9,12 +9,17 @@ import os
 import json
 import streamlit as st
 from typing import Dict, List, Tuple
-from dotenv import load_dotenv
 import httpx
 from openai import OpenAI
 
-# Load environment variables from .env file
-load_dotenv()
+# Load environment variables from .env file - handle gracefully if dotenv not available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # If dotenv is not installed, continue without it
+    # (useful for cloud deployments like Streamlit Cloud)
+    pass
 
 # First question that always appears
 FIRST_QUESTION = """What are your main objectives, and what are your priorities?
